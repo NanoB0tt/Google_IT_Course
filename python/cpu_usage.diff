@@ -1,0 +1,12 @@
+--- cpu_usage.py	2021-07-14 11:52:49.738043612 -0300
++++ cpu_usage2.py	2021-07-14 11:58:01.274289098 -0300
+@@ -3,7 +3,8 @@
+ import psutil
+ 
+ def check_cpu_usage(percent):
+-  usage = psutil.cpu_percent()
++  usage = psutil.cpu_percent(1)
++  print("DEBUG: usage: {}".format(usage))
+   return usage < percent
+ 
+ if not check_cpu_usage(75):
